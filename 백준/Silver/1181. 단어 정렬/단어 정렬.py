@@ -1,8 +1,8 @@
+import sys
 n=int(input())
-a=[]
+a=set()
 for i in range(n):
-    a.append(input())
-a=list(set(a))
-a.sort(key=lambda x: (len(x), x))
-for i in a:
+    a.add(sys.stdin.readline().strip())
+b=sorted(list(a), key=lambda x: (len(x), x))
+for i in b:
     print(i)
