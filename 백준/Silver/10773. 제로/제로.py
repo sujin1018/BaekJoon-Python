@@ -1,12 +1,11 @@
+import sys
+input=sys.stdin.readline
 k=int(input())
 a=[]
-res=0
-for i in range(k):
+for _ in range(k):
     s=int(input())
-    a.append(s)
-    if(s==0):
+    if s == 0:
         a.pop()
-        a.pop()
-for i in a:
-    res+=i
-print(res)
+    else:
+        a.append(s)
+print(sum(a))
