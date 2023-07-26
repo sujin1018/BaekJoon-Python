@@ -1,14 +1,13 @@
-from collections import deque
 a,b=map(int,input().split())
-q=deque([(a,1)])
-while q:
-    i,cnt=q.popleft()
-    if i==b:
-        print(cnt)
+cnt=1
+while a!=b:
+    cnt+=1
+    tmp=b
+    if b%2==0:
+        b//=2
+    elif b%10==1:
+        b//=10
+    if tmp==b:
+        cnt=-1
         break
-    if i*10+1<=b:
-        q.append((i*10+1,cnt+1))
-    if i*2<=b:
-        q.append((i*2,cnt+1))
-else:
-    print(-1)  
+print(cnt)
